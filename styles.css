@@ -1,0 +1,291 @@
+/* ══════════════════════════════════════════════════════════
+   GestureOS  ·  Neon-Dark Design System
+   Font: Space Mono (monospace headers) + DM Sans (body)
+   Theme: Deep navy background · neon accent grid
+   ══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/* ─── GLOBAL RESET ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, [class*="css"] {
+  font-family: 'DM Sans', sans-serif !important;
+  background: #080C18 !important;
+  color: #C8D6F0 !important;
+}
+
+/* Remove default Streamlit padding */
+.block-container { padding-top: 1rem !important; padding-bottom: 2rem !important; }
+.stApp > header  { background: transparent !important; }
+
+/* ─── HERO HEADER ──────────────────────────────────────────── */
+.hero-header {
+  background: linear-gradient(135deg, #0D1428 0%, #0A1020 40%, #0D1830 100%);
+  border: 1px solid #1E3060;
+  border-radius: 16px;
+  padding: 28px 36px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 10% 50%, rgba(80,180,255,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 90% 50%, rgba(220,80,255,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-title {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #F0F8FF;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  line-height: 1;
+}
+.gesture-icon { font-size: 2.4rem; }
+.hero-sub {
+  color: #6888B0;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+
+/* ─── PANELS ───────────────────────────────────────────────── */
+.panel-title {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #4A90D9;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.badge {
+  background: rgba(80,180,255,0.15);
+  color: #50B4FF;
+  border: 1px solid rgba(80,180,255,0.3);
+  border-radius: 4px;
+  font-size: 0.65rem;
+  padding: 2px 8px;
+  font-family: 'DM Sans', sans-serif !important;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ─── CAMERA IDLE STATE ────────────────────────────────────── */
+.cam-idle {
+  background: linear-gradient(160deg, #0D1428, #0A1830);
+  border: 1px dashed #1E3060;
+  border-radius: 12px;
+  padding: 60px 24px;
+  text-align: center;
+  color: #3A5880;
+  font-size: 1.1rem;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── STATUS BAR ───────────────────────────────────────────── */
+.status-bar {
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-family: 'Space Mono', monospace !important;
+}
+.status-bar.active {
+  background: rgba(80,220,100,0.1);
+  border: 1px solid rgba(80,220,100,0.3);
+  color: #50DC64;
+}
+.status-bar.idle {
+  background: rgba(74,144,217,0.08);
+  border: 1px solid rgba(74,144,217,0.2);
+  color: #4A90D9;
+}
+
+/* ─── GESTURE CARDS ────────────────────────────────────────── */
+.gesture-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.gesture-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+.gc-icon { font-size: 1.6rem; flex-shrink: 0; }
+.gc-info { display: flex; flex-direction: column; gap: 1px; }
+.gc-name {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.gc-gesture { font-size: 0.72rem; color: #6888B0; text-transform: capitalize; }
+.gc-shortcut {
+  font-size: 0.68rem;
+  font-family: 'Space Mono', monospace !important;
+  color: #3A5880;
+}
+
+/* ─── CENTER DIVIDER ───────────────────────────────────────── */
+.center-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 300px;
+  padding-top: 60px;
+  color: #1E3060;
+  font-size: 1.5rem;
+}
+
+/* ─── COMMAND LOG ──────────────────────────────────────────── */
+.log-entry {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(14,26,50,0.8);
+  border: 1px solid #1A2A44;
+  margin-bottom: 5px;
+  font-size: 0.85rem;
+}
+.log-time {
+  font-family: 'Space Mono', monospace !important;
+  color: #3A5880;
+  font-size: 0.72rem;
+  min-width: 60px;
+}
+.log-icon { font-size: 1.1rem; }
+.log-command {
+  font-family: 'Space Mono', monospace !important;
+  font-weight: 700;
+  font-size: 0.78rem;
+  flex: 1;
+}
+.log-keys {
+  font-family: 'Space Mono', monospace !important;
+  color: #3A5880;
+  font-size: 0.68rem;
+}
+.log-empty {
+  color: #3A5880;
+  font-size: 0.85rem;
+  padding: 12px 0;
+  text-align: center;
+}
+
+/* ─── SIDEBAR ──────────────────────────────────────────────── */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0 4px;
+}
+.sidebar-icon { font-size: 1.8rem; }
+.sidebar-title {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #F0F8FF;
+}
+
+.stack-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 6px 0;
+  border-bottom: 1px solid #111C30;
+  font-size: 0.82rem;
+}
+.stack-desc { color: #3A5880; font-size: 0.72rem; text-align: right; max-width: 50%; }
+
+.about-box {
+  background: rgba(20,36,60,0.7);
+  border: 1px solid #1E3060;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 0.78rem;
+  color: #6888B0;
+  line-height: 1.6;
+}
+.about-box a { color: #4A90D9 !important; text-decoration: none; }
+.about-box a:hover { text-decoration: underline; }
+
+/* ─── STREAMLIT OVERRIDES ──────────────────────────────────── */
+
+/* Text area */
+.stTextArea textarea {
+  background: #0D1428 !important;
+  border: 1px solid #1E3060 !important;
+  border-radius: 10px !important;
+  color: #C8D6F0 !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.9rem !important;
+  resize: vertical;
+}
+.stTextArea textarea:focus {
+  border-color: #4A90D9 !important;
+  box-shadow: 0 0 0 2px rgba(74,144,217,0.2) !important;
+}
+
+/* Buttons */
+.stButton > button {
+  background: rgba(14,26,50,0.9) !important;
+  border: 1px solid #1E3060 !important;
+  color: #C8D6F0 !important;
+  border-radius: 8px !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.82rem !important;
+  padding: 8px 12px !important;
+  transition: all 0.15s ease !important;
+}
+.stButton > button:hover {
+  border-color: #4A90D9 !important;
+  color: #4A90D9 !important;
+  background: rgba(74,144,217,0.08) !important;
+}
+.stButton > button:first-child { border-color: #1E3060; }
+
+/* Primary button (Start Camera) */
+div[data-testid="column"]:first-child .stButton > button {
+  border-color: rgba(80,220,100,0.4) !important;
+  color: #50DC64 !important;
+}
+div[data-testid="column"]:first-child .stButton > button:hover {
+  background: rgba(80,220,100,0.1) !important;
+}
+
+/* Sliders */
+.stSlider > div > div > div {
+  background: linear-gradient(to right, #4A90D9, #DC50FF) !important;
+}
+
+/* Sidebar bg */
+[data-testid="stSidebar"] {
+  background: #080C18 !important;
+  border-right: 1px solid #1A2A44 !important;
+}
+
+/* Hide default Streamlit elements */
+#MainMenu, footer, header { visibility: hidden !important; }

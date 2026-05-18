@@ -1,0 +1,28 @@
+# GestureOS — Python Dependencies
+# Install: pip install -r requirements.txt
+
+# ── Core Framework ────────────────────────────────────────────
+streamlit>=1.32.0
+
+# ── Computer Vision ───────────────────────────────────────────
+opencv-python>=4.9.0.80
+
+# ── MediaPipe (pinned — newer versions break on Windows) ──────
+mediapipe==0.10.9
+protobuf==3.20.3
+
+# ── Data handling ─────────────────────────────────────────────
+numpy>=1.24.0,<2.0.0
+
+# ── OS Automation ─────────────────────────────────────────────
+pyautogui>=0.9.54
+
+# ── Image handling ────────────────────────────────────────────
+Pillow>=10.2.0
+
+# ── OPTIONAL: only needed if you run train_model.py ──────────
+ tensorflow==2.13.0
+ pandas>=2.2.0
+ scikit-learn>=1.4.0
+ matplotlib>=3.8.0
+ seaborn>=0.13.0
