@@ -1,22 +1,25 @@
+# Gesture Command Controls — Streamlit Cloud
+# Python 3.11 + Linux compatible (tested)
 
 streamlit==1.32.0
- 
-# Computer vision
+
+# Computer vision — mediapipe 0.10.9 is last version
+# with a clean Linux/Python 3.11 wheel
 opencv-python-headless==4.8.1.78
 mediapipe==0.10.9
- 
+
 # Data & numerics
 numpy==1.26.4
 pandas==2.1.4
- 
+
 # Image processing
 Pillow==10.2.0
-protobuf==4.25.3
- 
+protobuf==3.20.3
+
 # Machine learning
 scikit-learn==1.3.2
 joblib==1.3.2
- 
+
 # Visualisation
 matplotlib==3.8.2
 seaborn==0.13.1
