@@ -2,7 +2,7 @@
 ╔══════════════════════════════════════════════════════════════╗
 ║         GESTURE COMMAND CONTROL SYSTEM                       ║
 ║         FAANG-Level Portfolio Project                        ║
-║         Author: [Your Name]                                  ║
+║         Author: [Thamarai Selvan B]                                  ║
 ╚══════════════════════════════════════════════════════════════╝
 
 Run: streamlit run app.py
@@ -27,9 +27,11 @@ st.set_page_config(
 )
 
 # ─── INJECT CUSTOM CSS ──────────────────────────────────────────────────────────
-with open("assets/styles.css", encoding="utf-8") as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
+# Replace line 30 in app.py with this:
+css_path = "assets/styles.css"
+if os.path.exists(css_path):
+    with open(css_path, encoding="utf-8") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 # ─── SESSION STATE INIT ─────────────────────────────────────────────────────────
 if "command_log" not in st.session_state:
     st.session_state.command_log = []
