@@ -1,6 +1,6 @@
 # Gesture Command Controls — Streamlit Cloud Safe
 
-streamlit>=1.28.0
+streamlit==1.35.0
 
 # Computer vision
 opencv-python-headless>=4.8.0
